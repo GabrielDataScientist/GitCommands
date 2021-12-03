@@ -61,5 +61,15 @@ Quando outros programadores devem aprovar o código para entrar na branch princi
 
 touch .gitignore -> informa ao Git quais arquivos não devem ser encontrados
 
+Passos
+	git init
+	git add README.md
+	git commit -m "first commit"
+	git branch -M main
+	git remote add origin https://github.com/GabrielDataScientist/GabrielDataScientist.git
+	git push -u origin main
 
-
+ou de um repositório existente
+	git remote add origin https://github.com/GabrielDataScientist/GabrielDataScientist.git
+	git branch -M main
+	git push -u origin main
