@@ -1,0 +1,65 @@
+git init -> inicia a pasta de versionamento
+git status -> mostra quais arquivos já estão no git ou não
+git add "nome_do_arquivo.extensão" -> prepara o arquivo selecionado para o controle de versão (caso queira adicionar apenas um arquivo)
+git add . -> para preparar todos os arquivos existente na pasta
+git commit -m "commit incial"-> informa para os usuários as alterações de versionamento
+		-m = mensagem
+git config --global user.email "you@example.com" -> caso seja a primeira vez que faça o versionamento de código.
+git config --global user.name "Your Name" o GitHub precisa saber quem está fazendo o upload de arquivos e alterando-os.
+
+É necessário criar um link de repositório no GitHub antes de subir os arquivos para lá. 
+Portanto, antes de dar o comando git push, crie um repositório no git hub e copie o link
+
+git remote add origin link_do_repositório_do_git_hub
+
+Agora que o arquivo está preparado, execute o seguinte comando para envia-lo para o GitHub
+git push --set-upstream origin nome_da_branch 
+
+Para futuras atualizações: (comandos mais usados)
+git status -> Mostra quais arquivos foram modificados
+git add . ou git add "nome_do_arquivo_._extensão" 
+git status -> verfica se o arquivo está pronto para upload
+git commit -m "quais atualizações foram feitas" -> Mostra para o dev quais atualizações foram feitas no arquivo
+git push -> Sobe o arquivo para o GitHub
+
+Mostrar atualizações:
+git reflog -> Mostra as atualizações mais recentes no topo
+
+Navegar entre versões:
+git reset --hard código_da_versão_que_deseja_voltar
+Esse código é mostrado ao executar o comando git reflog
+
+--- Comandos avançados ---
+git branch -> Mostra quais branchs(ramifiações) existem
+git branch nome_da_branch -> adiciona uma nova branch
+A branch que estiver marcada com asterisco e da cor verde, será a branch que está sendo utilizada
+git checkout nome_da_branch -> Ativa a branch que se deseja trabalhar
+git checkou -b nova_branch branch_atual -> Cria uma nova branch e já ativa ela, sem precisar de outro código
+git push --set-upstream origin staging -> Para configurar a nova branch e subir para o GitHub
+
+**As brenchs servem basicamente para testar e configurar o código beta do sistema. Após estar devidamente configurado
+e rodando, dê um comando merge para integra-lo ao código principal (master)**
+
+MERGE - Unir o código novo com a brench principal
+git pull -> Traz atualizações do servidor para a máquina local
+*sempre fazer o git pull antes de fazer o merge*
+git checkout branch_principal
+git merge nome_branch_onde_está_os_novos_dados
+
+1 - git pull da branch principal
+2 - gerar uma nova branch
+3 - trabalhar e adicionar novas funcionalidades 
+4 - finalizar o trabalho da branch temporária
+5 - git checkout da branch principal
+6 - git pull
+7 - Unir(merge) o código da branch temporária com a branch principal
+	*depois de testar*
+8 - Git push da branch principal
+
+PULL REQUEST
+Quando outros programadores devem aprovar o código para entrar na branch principal
+
+touch .gitignore -> informa ao Git quais arquivos não devem ser encontrados
+
+
+
